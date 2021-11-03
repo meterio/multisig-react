@@ -2,7 +2,7 @@
 
 export enum WALLETS {
   METAMASK = 'metamask',
-  ONEWALLET = 'onewallet'
+  ONEWALLET = 'onewallet',
 }
 
 export enum FEATURES {
@@ -22,8 +22,8 @@ type Token = {
 }
 
 export enum HARMONY_NETWORK {
-  MAINNET = 1666600000,
-  TESTNET = 1666700000,
+  MAINNET = 101,
+  TESTNET = 65,
   UNKNOWN = 0,
 }
 

@@ -56,10 +56,10 @@ const updateTxBasedOnReceipt = ({
           .set('status', receipt.status ? TransactionStatus.SUCCESS : TransactionStatus.FAILED)
       })
     : transaction.set('status', TransactionStatus.AWAITING_CONFIRMATIONS)
-
   return txToStore.withMutations((tx) => {
     const senderHasAlreadyConfirmed = tx.confirmations.findIndex(({ owner }) => sameAddress(owner, from)) !== -1
 
+    console.log('sender has already confirmed:', senderHasAlreadyConfirmed)
     if (!senderHasAlreadyConfirmed) {
       // updates confirmations status
       tx.update('confirmations', (confirmations) => confirmations.push(makeConfirmation({ owner: from })))
@@ -138,13 +138,14 @@ type StoreExecParams = StoreTxParams & {
   receipt: TransactionReceipt
 }
 
-export const storeExecutedTx = ({ safeAddress, dispatch, state, ...rest }: StoreExecParams): Promise<void> =>
-  storeTx({
+export const storeExecutedTx = ({ safeAddress, dispatch, state, ...rest }: StoreExecParams): Promise<void> => {
+  return storeTx({
     transaction: updateTxBasedOnReceipt({ ...rest }),
     safeAddress,
     dispatch,
     state,
   })
+}
 
 export const removeTxFromStore = (
   transaction: Transaction,

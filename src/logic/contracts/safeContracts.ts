@@ -33,7 +33,7 @@ export const getGnosisSafeContract = (web3: Web3, networkId: HARMONY_NETWORK) =>
   // TODO: this may not be the most scalable approach,
   //  but up until v1.2.0 the address is the same for all the networks.
   //  So, if we can't find the network in the Contract artifact, we fallback to MAINNET.
-  const contractAddress = '0x3736aC8400751bf07c6A2E4db3F4f3D9D422abB2'
+  const contractAddress = '0xd7edF3ACE30f646D0239Dd3A902fd0018cB4D4c1'
   return (new web3.eth.Contract(GnosisSafeSol.abi as AbiItem[], contractAddress) as unknown) as GnosisSafe
 }
 
@@ -46,7 +46,7 @@ const getProxyFactoryContract = (web3: Web3, networkId: HARMONY_NETWORK): Gnosis
   // TODO: this may not be the most scalable approach,
   //  but up until v1.2.0 the address is the same for all the networks.
   //  So, if we can't find the network in the Contract artifact, we fallback to MAINNET.
-  const contractAddress = '0x4f9b1dEf3a0f6747bF8C870a27D3DeCdf029100e'
+  const contractAddress = '0x9fc5ff68a1151E6D36494C05dAd83c857236C819'
   return (new web3.eth.Contract(ProxyFactorySol.abi as AbiItem[], contractAddress) as unknown) as GnosisSafeProxyFactory
 }
 

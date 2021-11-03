@@ -254,7 +254,6 @@ const SafeDeployment = ({ creationTxHash, onCancel, onRetry, onSuccess, submitte
 
         const receipt = await web3.eth.getTransactionReceipt(safeCreationTxHash)
 
-
         let safeAddress
 
         if (receipt.events) {
@@ -268,8 +267,8 @@ const SafeDeployment = ({ creationTxHash, onCancel, onRetry, onSuccess, submitte
                 name: 'ProxyCreation',
               },
             ],
-            receipt.logs[0].data,
-            receipt.logs[0].topics,
+            receipt.logs[1].data,
+            receipt.logs[1].topics,
           )
           safeAddress = events[0]
         }
