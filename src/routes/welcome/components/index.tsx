@@ -77,19 +77,19 @@ export const WelcomeLayout = ({ isOldMultisigMigration }: Props): React.ReactEle
     <Block>
       {/* Title */}
       <Title size="md" strong>
-        Welcome to Harmony Multisig Wallet.
+        Welcome to Meter Multisig Wallet.
       </Title>
 
       {/* Subtitle */}
       <Title size="xs">
         {isOldMultisigMigration ? (
           <>
-            We will replicate the owner structure from your existing Harmony MultiSig to let you test the new interface.
+            We will replicate the owner structure from your existing Meter MultiSig to let you test the new interface.
             As soon as you feel comfortable, start moving funds to your new Safe.
           </>
         ) : (
           <>
-            Harmony Multisig is the most trusted platform to manage digital assets. <br /> Here is how to get started:{' '}
+            Meter Multisig is the most trusted platform to manage digital assets. <br /> Here is how to get started:{' '}
           </>
         )}
       </Title>
@@ -107,7 +107,7 @@ export const WelcomeLayout = ({ isOldMultisigMigration }: Props): React.ReactEle
               </StyledTitle>
             </TitleWrapper>
             <Text size="xl">
-              Harmony Multisig supports a wide range of wallets that you can choose to be one of the authentication
+              Meter Multisig supports a wide range of wallets that you can choose to be one of the authentication
               factors.
             </Text>
             <StyledButton

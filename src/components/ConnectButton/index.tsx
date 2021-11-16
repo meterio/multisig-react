@@ -42,7 +42,7 @@ export const onboard = Onboard({
     },
   },
   walletSelect: {
-    description: 'Please select a wallet to connect to Harmony Multisig',
+    description: 'Please select a wallet to connect to Meter Multisig',
     wallets,
   },
   walletCheck: [

@@ -2,9 +2,9 @@ import ClickAwayListener from '@material-ui/core/ClickAwayListener'
 import Grow from '@material-ui/core/Grow'
 import List from '@material-ui/core/List'
 import Popper from '@material-ui/core/Popper'
-import {withStyles} from '@material-ui/core/styles'
+import { withStyles } from '@material-ui/core/styles'
 import * as React from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import Provider from './Provider'
 
@@ -12,8 +12,8 @@ import Spacer from 'src/components/Spacer'
 import Col from 'src/components/layout/Col'
 import Img from 'src/components/layout/Img'
 import Row from 'src/components/layout/Row'
-import {border, headerHeight, md, screenSm, sm} from 'src/theme/variables'
-import {useStateHandler} from 'src/logic/hooks/useStateHandler'
+import { border, headerHeight, md, screenSm, sm } from 'src/theme/variables'
+import { useStateHandler } from 'src/logic/hooks/useStateHandler'
 
 import HarmonyLogo from 'src/assets/icons/icon-onewallet.svg'
 
@@ -53,25 +53,25 @@ const styles = () => ({
     },
 })
 
-const Layout = ({classes, providerDetails, providerInfo}) => {
-    const {clickAway, open, toggle} = useStateHandler()
+const Layout = ({ classes, providerDetails, providerInfo }) => {
+    const { clickAway, open, toggle } = useStateHandler()
 
     return (
         <Row className={classes.summary}>
             <Col className={classes.logo} middle="xs" start="xs">
-                <Link to="/" style={{marginRight: 10}}>
-                    <Img alt="Harmony Multisig" height={36} src={HarmonyLogo} testId="heading-multisig-logo"/>
+                <Link to="/" style={{ marginRight: 10 }}>
+                    <Img alt="Meter Multisig" height={36} src={HarmonyLogo} testId="heading-multisig-logo" />
                 </Link>
-                <div style={{lineHeight: '18px'}}>
-                    <Link to="/" style={{textDecoration: 'none'}}>
-                        <span style={{fontSize: '22px', color: 'black'}}>Harmony Multisig</span>
+                <div style={{ lineHeight: '18px' }}>
+                    <Link to="/" style={{ textDecoration: 'none' }}>
+                        <span style={{ fontSize: '22px', color: 'black' }}>Meter Multisig</span>
                     </Link>
-                    <br/>
-                    <span style={{opacity: '0.4'}}>(based on Gnosis Safe)</span>
+                    <br />
+                    <span style={{ opacity: '0.4' }}>(based on Gnosis Safe)</span>
                 </div>
             </Col>
 
-            <Spacer/>
+            <Spacer />
             <Provider
                 info={providerInfo}
                 open={open}
@@ -82,9 +82,9 @@ const Layout = ({classes, providerDetails, providerInfo}) => {
                         className={classes.popper}
                         open={open}
                         placement="bottom"
-                        popperOptions={{positionFixed: true}}
+                        popperOptions={{ positionFixed: true }}
                     >
-                        {({TransitionProps}) => (
+                        {({ TransitionProps }) => (
                             <Grow {...TransitionProps}>
                                 <>
                                     <ClickAwayListener mouseEvent="onClick" onClickAway={clickAway} touchEvent={false}>

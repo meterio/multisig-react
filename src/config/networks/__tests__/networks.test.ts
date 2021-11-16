@@ -84,7 +84,7 @@ describe('Networks config files test', () => {
   })
 
   networksFileNames.forEach((networkFileName) => {
-    it(`should have one of 'HARMONY_NETWORK' values for 'network.id'`, () => {
+    it(`should have one of 'METER_NETWORK' values for 'network.id'`, () => {
       // Given
       const networkConfig = networks[networkFileName]
 

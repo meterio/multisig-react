@@ -45,15 +45,15 @@ const Footer = (): React.ReactElement => {
 
   return (
     <footer className={classes.footer}>
-      <span className={classes.item}>©{date.getFullYear()} Harmony One</span>
+      <span className={classes.item}>©{date.getFullYear()} Meter</span>
       <span className={classes.sep}>|</span>
-      <Link className={cn(classes.item, classes.link)} target="_blank" to="https://staking.harmony.one/terms">
+      {/* <Link className={cn(classes.item, classes.link)} target="_blank" to="https://staking.harmony.one/terms">
         Terms
       </Link>
       <span className={classes.sep}>|</span>
       <Link className={cn(classes.item, classes.link)} target="_blank" to="https://www.harmony.one/privacy">
         Privacy
-      </Link>
+      </Link> */}
     </footer>
   )
 }

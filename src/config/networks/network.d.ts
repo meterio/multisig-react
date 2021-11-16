@@ -22,8 +22,8 @@ type Token = {
 }
 
 export enum HARMONY_NETWORK {
-  MAINNET = 101,
-  TESTNET = 65,
+  MAINNET = 82,
+  TESTNET = 83,
   UNKNOWN = 0,
 }
 
