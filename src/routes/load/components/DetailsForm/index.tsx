@@ -23,6 +23,7 @@ import Paragraph from 'src/components/layout/Paragraph'
 import { FIELD_LOAD_ADDRESS, FIELD_LOAD_NAME } from 'src/routes/load/components/fields'
 import { secondary } from 'src/theme/variables'
 import { getSafeInfo } from 'src/logic/safe/utils/safeInformation'
+import { useLocation } from 'react-router-dom'
 
 const useStyles = makeStyles({
   root: {
@@ -130,11 +131,11 @@ const DetailsForm = ({ errors, form }: DetailsFormProps): React.ReactElement => 
       <Block margin="sm">
         <Paragraph className={classes.links} color="primary" noMargin size="md">
           By continuing you consent to the{' '}
-          <a href="https://staking.harmony.one/terms" rel="noopener noreferrer" target="_blank">
+          <a href={window.location.origin + '/#/terms'} rel="noopener noreferrer" target="_blank">
             terms of use
           </a>{' '}
           and{' '}
-          <a href="https://www.harmony.one/privacy" rel="noopener noreferrer" target="_blank">
+          <a href={window.location.origin + '/#/privacy'} rel="noopener noreferrer" target="_blank">
             privacy policy
           </a>
           .

@@ -2,7 +2,7 @@ import React, { Suspense, lazy, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Redirect, Route, Switch, useLocation, useRouteMatch } from 'react-router-dom'
 
-import { LOAD_ADDRESS, OPEN_ADDRESS, SAFELIST_ADDRESS, SAFE_PARAM_ADDRESS, WELCOME_ADDRESS } from './routes'
+import { LOAD_ADDRESS, OPEN_ADDRESS, SAFELIST_ADDRESS, SAFE_PARAM_ADDRESS, WELCOME_ADDRESS, USER_TERM, USER_PRIVACY } from './routes'
 
 import Loader from 'src/components/Loader'
 import { defaultSafeSelector } from 'src/logic/safe/store/selectors'
@@ -15,6 +15,10 @@ const Open = lazy(() => import('./open/container/Open'))
 const Safe = lazy(() => import('./safe/container'))
 
 const Load = lazy(() => import('./load/container/Load'))
+
+const UserTerm = lazy(() => import('./consents/container/term'))
+
+const UserPrivacy = lazy(() => import('./consents/container/privacy'))
 
 const SAFE_ADDRESS = `${SAFELIST_ADDRESS}/:${SAFE_PARAM_ADDRESS}`
 
@@ -71,6 +75,8 @@ const Routes = (): React.ReactElement => {
         <Route component={Open} exact path={OPEN_ADDRESS} />
         <Route component={Safe} path={SAFE_ADDRESS} />
         <Route component={Load} exact path={LOAD_ADDRESS} />
+        <Route component={UserTerm} exact path={USER_TERM} />
+        <Route component={UserPrivacy} exact path={USER_PRIVACY} />
         <Redirect to="/" />
       </Switch>
     </Suspense>

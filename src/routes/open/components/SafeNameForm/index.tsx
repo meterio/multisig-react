@@ -56,11 +56,11 @@ const SafeNameForm = ({ safeName }: { safeName: string }): React.ReactElement =>
       <Block margin="lg">
         <Paragraph className={classes.links} color="primary" noMargin size="md">
           By continuing you consent to the{' '}
-          <a href="https://staking.harmony.one/terms" rel="noopener noreferrer" target="_blank">
+          <a href={window.location.origin + '/#/terms'} rel="noopener noreferrer" target="_blank">
             terms of use
           </a>{' '}
           and{' '}
-          <a href="https://www.harmony.one/privacy" rel="noopener noreferrer" target="_blank">
+          <a href={window.location.origin + '/#/privacy'} rel="noopener noreferrer" target="_blank">
             privacy policy
           </a>
           .
