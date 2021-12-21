@@ -2,15 +2,15 @@ import HarmonyLogo from 'src/config/assets/token-one.png'
 import { EnvironmentSettings, HARMONY_NETWORK, NetworkConfig } from 'src/config/networks/network.d'
 
 const baseConfig: EnvironmentSettings = {
-  txServiceUrl: 'http://13.213.151.70:8000/api/v1',
+  txServiceUrl: 'http://18.139.223.187:8000/api/v1',
   safeAppsUrl: 'https://multisig.harmony.one',
   gasPriceOracle: {
     url: 'https://ethgasstation.info/json/ethgasAPI.json',
     gasParameter: 'average',
   },
-  rpcServiceUrl: 'https://rpctest.meter.io',
+  rpcServiceUrl: 'https://rpc.meter.io',
   networkExplorerName: 'Meter Explorer',
-  networkExplorerUrl: 'https://explorer-warringstakes.meter.io/#',
+  networkExplorerUrl: 'https://scan.meter.io',
   networkExplorerApiUrl: 'https://api.etherscan.io/api',
 }
 

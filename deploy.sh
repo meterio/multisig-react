@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # build
-yarn build
+REACT_APP_NETWORK=testnet yarn build
 
 # copy dist to mainnet S3
 aws s3 cp ./build/ s3://multisig-test.meter.io/ --recursive --acl public-read
