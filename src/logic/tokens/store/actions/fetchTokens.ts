@@ -107,7 +107,13 @@ export const fetchTokens = () => async (
       return
     }
 
-    const tokens = List(erc20Tokens.map((token) => makeToken(token)))
+    for (let item of erc20Tokens) {
+      item.logoUri = `/token-logo/${item.symbol.toLowerCase()}.png` 
+    }
+
+    const tokens = List(erc20Tokens.map((token) => makeToken(token)).filter((token) => token.symbol !== 'MTR'))
+
+    console.log('tokens', tokens)
 
     dispatch(saveTokens(tokens))
   } catch (err) {

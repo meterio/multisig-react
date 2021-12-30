@@ -1,4 +1,3 @@
-import HarmonyLogo from 'src/config/assets/token-one.png'
 import { EnvironmentSettings, HARMONY_NETWORK, NetworkConfig } from 'src/config/networks/network.d'
 
 const baseConfig: EnvironmentSettings = {
@@ -40,7 +39,7 @@ const mainnet: NetworkConfig = {
       name: 'Meter',
       symbol: 'MTR',
       decimals: 18,
-      logoUri: HarmonyLogo,
+      logoUri: '/token-logo/mtr.png',
     },
   },
 }
