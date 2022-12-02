@@ -23,14 +23,11 @@ export default handleActions(
             transactions.forEach((updateTx) => {
               const storedTxIndex = txsList.findIndex((txIterator) => txIterator.safeTxHash === updateTx.safeTxHash)
 
-              console.log('looking for ', updateTx.safeTxHash, ', index =', storedTxIndex)
-              console.log(updateTx.confirmations.size)
               if (storedTxIndex !== -1) {
                 // Update
                 if (updateTx.confirmations.size) {
                   // if there are confirmations then we replace what's stored with the new tx
                   // as we assume that this is the newest tx returned by the server
-                  console.log('replace with new tx:', updateTx)
                   txsList.update(storedTxIndex, () => updateTx)
                 } else {
                   // if there are no confirmations, we assume this is a mocked tx

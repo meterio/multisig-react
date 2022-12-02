@@ -45,7 +45,6 @@ export const getDataFromNodeErrorMessage = (errorMessage: string): string | unde
   // Replace illegal characters that often comes within the error string (like � for example)
   // https://stackoverflow.com/questions/12754256/removing-invalid-characters-in-javascript
   const normalizedErrorString = errorMessage.replace(/\uFFFD/g, '')
-
   // Extracts JSON object from the error message
   const [, ...error] = normalizedErrorString.split('\n')
 
@@ -80,8 +79,8 @@ export const getDataFromNodeErrorMessage = (errorMessage: string): string | unde
     //     "id": number
     // }
     if (errorAsJSON?.data) {
-      const [, dataResult] = errorAsJSON.data.split(' ')
-      return dataResult
+      // const [, dataResult] = errorAsJSON.data.split(' ')
+      return errorAsJSON.data
     }
   } catch (error) {
     console.error(`Error trying to extract data from node error message: ${errorMessage}`)

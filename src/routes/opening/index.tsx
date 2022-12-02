@@ -227,9 +227,7 @@ const SafeDeployment = ({ creationTxHash, onCancel, onRetry, onSuccess, submitte
         try {
           const res = await isTxMined(creationTxHash)
 
-          console.log('setting step 4 if res', res)
           if (res) {
-            console.log('setting step 4 done!')
             setStepIndex(4)
             setWaitingSafeDeployed(true)
             setIntervalStarted(false)

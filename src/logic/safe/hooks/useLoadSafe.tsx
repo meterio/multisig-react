@@ -21,7 +21,7 @@ export const useLoadSafe = (safeAddress?: string): boolean => {
         await dispatch(fetchSafe(safeAddress))
         setIsSafeLoaded(true)
         await dispatch(fetchSafeTokens(safeAddress))
-        dispatch(fetchSafeCreationTx(safeAddress))
+        // dispatch(fetchSafeCreationTx(safeAddress))
         dispatch(fetchTransactions(safeAddress))
         dispatch(addViewedSafe(safeAddress))
       }
